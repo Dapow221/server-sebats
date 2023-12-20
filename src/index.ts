@@ -24,7 +24,7 @@ server.listen(3000, () => {
     console.log(`Server running on http://localhost:${3000}/`)
 })
 
-const MongoDBUrl = '' // your mongoDb uri
+const MongoDBUrl = 'mongodb+srv://Hasyakyla:znxt2X4c0yYIQqmG@cluster0.t6i0olb.mongodb.net/?retryWrites=true&w=majority' // your mongoDb uri
 
 mongoose.Promise = Promise
 mongoose.connect(MongoDBUrl)
