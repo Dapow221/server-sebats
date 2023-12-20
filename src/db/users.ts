@@ -1,3 +1,4 @@
+import { ObjectId } from "bson";
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
@@ -10,11 +11,13 @@ const UserSchema = new mongoose.Schema({
     }
 })
 
+
+
 export const userModel = mongoose.model('User', UserSchema)
 
 export const getUsers = () => userModel.find()
 export const getUsersByEmail = (email: String) => userModel.findOne({email})
-export const getUsersById = (id: String) => userModel.findOne(id)
+export const getUsersById = (id: String) => userModel.findById(id)
 export const getUsersByAccessToken = (access_token: String) => userModel.findOne({
     'authentication.access_token' : access_token
 })
