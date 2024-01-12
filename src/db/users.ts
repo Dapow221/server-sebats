@@ -1,4 +1,3 @@
-import { ObjectId } from "bson";
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
@@ -25,3 +24,15 @@ export const createUser = (values: Record<string, any>) => new userModel(values)
 export const deleteUserById = (id: String) => userModel.findOneAndDelete(id)
 export const updateUserById = (id: String, values: Record<string, any>) => userModel.findByIdAndUpdate(id, values)
 
+const productSchema = new mongoose.Schema({
+    title: { type: String, required: true },
+    image: { data: Buffer, contentType: String},
+    description: { type: String, required: true},
+    price: { type: String, required: true },
+
+})
+
+const StoreSchema = new mongoose.Schema({
+    usernameStore: { type: String, required: true},
+    description: { type: String, require: true }
+})
